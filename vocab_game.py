@@ -101,8 +101,7 @@ if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2)
 
 st.divider()
-st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")import streamlit as st
-
+st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")
 # จุดที่ 1: เพิ่มการกำหนดค่าเริ่มต้นใน session_state
 if 'ans3_val' not in st.session_state:
     st.session_state.ans3_val = ""
