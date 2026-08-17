@@ -101,4 +101,53 @@ if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2)
 
 st.divider()
+st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")import streamlit as st
+
+# จุดที่ 1: เพิ่มการกำหนดค่าเริ่มต้นใน session_state
+if 'ans3_val' not in st.session_state:
+    st.session_state.ans3_val = ""
+if 'ans4_val' not in st.session_state:
+    st.session_state.ans4_val = ""
+
+# จุดที่ 2: เพิ่มการเคลียร์ค่าเมื่อกดปุ่มเริ่มใหม่ (ในปุ่ม Reset/Play Again)
+if st.button("เริ่มใหม่ / Reset"):
+    st.session_state.ans3_val = ""
+    st.session_state.ans4_val = ""
+
+# จุดที่ 6: เพิ่มช่องรับคำตอบ ans3 และ ans4
+ans3 = st.text_input("ข้อ 3: 🍎 A_p_e", value=st.session_state.ans3_val)
+ans4 = st.text_input("ข้อ 4: 🍌 B_n_n_a", value=st.session_state.ans4_val)
+
+# จุดที่ 7: เพิ่มการอัปเดตค่าล่าสุดเข้าตัวแปร st.session_state
+st.session_state.ans3_val = ans3
+st.session_state.ans4_val = ans4
+
+# ปุ่มส่งคำตอบ / ตรวจผล
+if st.button("ตรวจคำตอบ 🎯"):
+    score = 0
+    
+    # (สมมติข้อ 1 และ 2 ตรวจสอบตรงนี้)
+    # ...
+    
+    # จุดที่ 3 & 4: สรุปผลและการตรวจข้อ 3 และข้อ 4
+    u_ans3 = ans3.strip().lower()
+    u_ans4 = ans4.strip().lower()
+
+    if u_ans3 == "apple":
+        score += 1
+    if u_ans4 == "banana":
+        score += 1
+
+    # จุดที่ 5: เพิ่มคะแนนเป็น score == 4 (รวม 4 ข้อ)
+    if score == 4:
+        st.balloons()
+        st.success("🎉 สุดยอดมาก! คุณตอบถูกครบทั้ง 4 ข้อ!")
+    else:
+        st.info(f"คุณได้คะแนน {score} / 4 คะแนน")
+
+    # จุดที่ 8: เพิ่มการแสดง Dialog ผลลัพธ์ ans3, ans4
+    st.write(f"คำตอบข้อ 3 ที่คุณตอบ: {ans3}")
+    st.write(f"คำตอบข้อ 4 ที่คุณตอบ: {ans4}")
+
 st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")
+
