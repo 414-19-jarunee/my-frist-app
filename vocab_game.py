@@ -101,4 +101,4 @@ if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2)
 
 st.divider()
-  st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")
+st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")
