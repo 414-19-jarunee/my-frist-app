@@ -86,9 +86,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 st.divider()
 
 
-# อัปเดตค่าล่าสุดเข้าตัวแปร
-st.session_state.ans3_val = ans3
-st.session_state.ans4_val = ans4
+
 
 
 # 4. ปุ่มส่งคำตอบ
