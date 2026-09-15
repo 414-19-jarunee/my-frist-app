@@ -55,7 +55,7 @@ def show_result_dialog(ans1, ans2):
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
-        st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
+        st.error(f"❌ ข้อ 4: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
     
 
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
@@ -88,8 +88,8 @@ st.divider()
 # อัปเดตค่าล่าสุดเข้าตัวแปร
 st.session_state.ans1_val = ans1
 st.session_state.ans2_val = ans2
-
-# ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มข้อ 3, 4 ตรงนี้
+st.session_state.ans3_val = ans3
+st.session_state.ans4_val = ans4
 
 
 # 4. ปุ่มส่งคำตอบ
@@ -103,7 +103,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 # 5. แสดง Dialog ผลลัพธ์
 if st.session_state.get("is_ended", False):
-    show_result_dialog(ans1, ans2)
+    show_result_dialog(ans3, ans4)
 
 st.divider()
 st.write("Everyone")
@@ -134,9 +134,9 @@ if st.button("ตรวจคำตอบ 🎯"):
     u_ans3 = ans3.strip().lower()
     u_ans4 = ans4.strip().lower()
 
-    if u_ans3 == "apple":
+    if u_ans3 == "liúliǎn":
         score += 1
-    if u_ans4 == "banana":
+    if u_ans4 == "mángguǒ":
         score += 1
 
     # จุดที่ 5: เพิ่มคะแนนเป็น score == 4 (รวม 4 ข้อ)
@@ -150,5 +150,5 @@ if st.button("ตรวจคำตอบ 🎯"):
     st.write(f"คำตอบข้อ 3 ที่คุณตอบ: {ans3}")
     st.write(f"คำตอบข้อ 4 ที่คุณตอบ: {ans4}")
 
-st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")
+st.write("Everybody")
 
