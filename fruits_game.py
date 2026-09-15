@@ -58,11 +58,9 @@ def show_result_dialog(ans1, ans2):
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans4}')")
     
 
-    # ✏️ [พื้นที่สำหรับนักเรียน]: เพิ่มตรวจข้อ 3, 4 ตรงนี้
-
     st.info(f"🏆 ได้คะแนนรวม: {score} คะแนน")
 
-    if score == 2:
+    if score == 4:
         st.success("🎉 You win!")
     else:
         st.error("💀 You lose!")
@@ -85,15 +83,7 @@ if "start" in st.session_state and not st.session_state.get("is_ended", False):
 
 st.divider()
 
-# 3. ช่องรับคำตอบ (ใช้ value ผูกกับตัวแปรตรงๆ เพื่อสั่งเคลียร์ได้)
-ans1 = st.text_input(
-    "ข้อ 1: An `a _ _ l e` a day keeps the doctor away. 🍎",
-    value=st.session_state.ans1_val,
-)
-ans2 = st.text_input(
-    "ข้อ 2: Cats love to eat `f _ s h`. 🐟",
-    value=st.session_state.ans2_val,
-)
+
 
 # อัปเดตค่าล่าสุดเข้าตัวแปร
 st.session_state.ans1_val = ans1
@@ -116,7 +106,7 @@ if st.session_state.get("is_ended", False):
     show_result_dialog(ans1, ans2)
 
 st.divider()
-st.write("นางสาวจารุณี รุ่งเรือง เลขที่ 19 ม.4/14")
+st.write("Everyone")
 # จุดที่ 1: เพิ่มการกำหนดค่าเริ่มต้นใน session_state
 if 'ans3_val' not in st.session_state:
     st.session_state.ans3_val = ""
@@ -128,9 +118,6 @@ if st.button("เริ่มใหม่ / Reset"):
     st.session_state.ans3_val = ""
     st.session_state.ans4_val = ""
 
-# จุดที่ 6: เพิ่มช่องรับคำตอบ ans3 และ ans4
-ans3 = st.text_input("ข้อ 3: 🍎 A_p_e", value=st.session_state.ans3_val)
-ans4 = st.text_input("ข้อ 4: 🍌 B_n_n_a", value=st.session_state.ans4_val)
 
 # จุดที่ 7: เพิ่มการอัปเดตค่าล่าสุดเข้าตัวแปร st.session_state
 st.session_state.ans3_val = ans3
