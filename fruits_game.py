@@ -31,28 +31,28 @@ def show_result_dialog(ans1, ans2, ans3, ans4):
     u_ans4 = ans4.strip().lower()
 
     # ตรวจข้อ 1
-    if u_ans1 == "píngguǒ":
+    if u_ans1 == "pingguo":
         st.success("✅ ข้อ 1: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 1: ยังไม่ถูกต้อง (คุณตอบ '{u_ans1}')")
 
     # ตรวจข้อ 2
-    if u_ans2 == "cǎoměi":
+    if u_ans2 == "caomei":
         st.success("✅ ข้อ 2: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
     # ตรวจข้อ 3
-    if u_ans3 == "liúliǎn":
+    if u_ans3 == "liulian":
         st.success("✅ ข้อ 3: ถูกต้อง")
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
     # ตรวจข้อ 4
-    if u_ans4 == "mángguǒ":
+    if u_ans4 == "mangguo":
         st.success("✅ ข้อ 4: ถูกต้อง")
         score += 1
     else:
