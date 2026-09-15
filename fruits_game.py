@@ -44,14 +44,14 @@ def show_result_dialog(ans1, ans2):
         st.error(f"❌ ข้อ 2: ยังไม่ถูกต้อง (คุณตอบ '{u_ans2}')")
 
     # ตรวจข้อ 3
-    if u_ans == "liúliǎn"
+    if u_ans3 == "liúliǎn"
         st.success("✅ ข้อ 3: ถูกต้อง')
         score += 1
     else:
         st.error(f"❌ ข้อ 3: ยังไม่ถูกต้อง (คุณตอบ '{u_ans3}')")
 
         # ตรวจข้อ 4
-    if u_ans == "mángguǒ"
+    if u_ans4 == "mángguǒ"
         st.success("✅ ข้อ 4: ถูกต้อง')
         score += 1
     else:
